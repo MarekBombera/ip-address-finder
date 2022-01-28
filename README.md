@@ -1,6 +1,7 @@
 # IP Address Finder
 
 Technologies: React, Redux, Typescript, Sass, Leaflet maps, Axios
+
 API: Abstract API - IP Geolocation
 
 The app displays information about the clients IP or any other IP the user searches for and shows the IP's approximate location on the map.
