@@ -38,7 +38,7 @@ export const Maps = (): JSX.Element => {
 				<ZoomControl position="bottomleft" />
 				<ChangeView center={[latitude, longitude]} zoom={15} />
 				<ReactLeafletGoogleLayer
-					apiKey="AIzaSyCJz_9LBoWz48-A7mPgFiEYXjDfnErA4wQ"
+					apiKey={`${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
 					type={"roadmap"}
 				/>
 				<Marker position={[latitude, longitude]} icon={locationIcon}>
