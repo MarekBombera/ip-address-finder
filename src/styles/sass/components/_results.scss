@@ -1,0 +1,159 @@
+@use "../base/breakpoints" as *;
+
+.app__main {
+	display: grid;
+	place-items: center;
+	position: relative;
+}
+
+.results {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+	top: 65%;
+	height: auto;
+	max-height: 600px;
+	width: min(80%, 360px);
+	padding: 1rem 0;
+	gap: 0.5rem;
+	transition: max-height 0.5s ease-out;
+	box-shadow: 0px 5px 10px 0px (rgb(0, 0, 0, 0.5));
+	background: rgb(255, 255, 255);
+	border-radius: 15px;
+	z-index: 9999;
+
+	&--closed {
+		max-height: 46px;
+	}
+
+	@include media(">=phone", "landscape") {
+		left: 0;
+		width: 40%;
+	}
+
+	@media (max-height: 450px) and (orientation: landscape) {
+		top: 100%;
+	}
+
+	@include media(">=tablet") {
+		flex-direction: row;
+		justify-content: space-evenly;
+		top: 80%;
+		width: min(90%, 1200px);
+		height: 120px;
+	}
+
+	@include media(">=tablet", "landscape") {
+		top: 100%;
+		left: auto;
+	}
+
+	@include media(">=LGdesktop") {
+		top: 82%;
+		height: 150px;
+		text-align: left;
+	}
+
+	&__close-icon {
+		position: absolute;
+		right: 5%;
+		height: 16px;
+
+		@include media(">=tablet") {
+			display: none;
+		}
+
+		img {
+			width: 15px;
+			height: 100%;
+		}
+
+		&--closed {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__flag {
+		margin-bottom: 0.4rem;
+
+		@include media(">=tablet") {
+			margin: 0 0 0 1rem;
+		}
+
+		@include media(">=desktop") {
+			margin: 0;
+		}
+
+		img {
+			width: 25px;
+			height: 100%;
+
+			@include media(">=tablet") {
+				width: 35px;
+				height: 100%;
+			}
+
+			@include media(">=desktop") {
+				width: 45px;
+				height: 100%;
+			}
+
+			@include media(">=LGdesktop") {
+				width: 55px;
+				height: 100%;
+			}
+		}
+	}
+
+	&__ip,
+	&__location,
+	&__timezone,
+	&__isp {
+		display: flex;
+		flex-direction: column;
+		word-break: break-word;
+		padding: 0 1.5rem;
+
+		@include media(">=desktop") {
+			padding: 0 0 0 2rem;
+			border-left: 1px solid black;
+		}
+
+		h4 {
+			margin: 0.5rem 0;
+			font-size: 1.25rem;
+			letter-spacing: -0.175px;
+
+			@include media(">=tablet") {
+				margin-bottom: 0;
+				font-size: 1.3rem;
+			}
+
+			@include media(">=desktop") {
+				font-size: 1.625rem;
+				letter-spacing: -0.23px;
+			}
+		}
+
+		p {
+			margin: 0;
+			opacity: 0.5;
+			text-transform: uppercase;
+			font-size: 0.625rem;
+			letter-spacing: 1.45px;
+
+			@include media(">=tablet") {
+				font-size: 0.7rem;
+				margin-bottom: 0;
+			}
+
+			@include media(">=desktop") {
+				font-size: 0.75rem;
+				letter-spacing: 1.75px;
+			}
+		}
+	}
+}

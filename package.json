@@ -10,9 +10,19 @@
     "@types/node": "^16.11.21",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@types/react-leaflet": "^2.8.2",
+    "@types/react-redux": "^7.1.22",
+    "axios": "^0.25.0",
+    "env-cmd": "^10.1.0",
+    "ip-range-check": "^0.2.0",
+    "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-leaflet": "^3.2.5",
+    "react-leaflet-google-layer": "^2.0.4",
+    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +49,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.13",
+    "@types/leaflet": "^1.7.8"
   }
 }

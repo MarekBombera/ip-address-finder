@@ -1,0 +1,11 @@
+@use "../base/breakpoints" as *;
+
+//Leaflet component with it's predefined classes
+.leaflet-container {
+	width: 100%;
+	height: 100vh;
+
+	@include media(">=LGdesktop") {
+		height: 80vh;
+	}
+}

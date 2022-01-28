@@ -1,0 +1,143 @@
+@use "../base/breakpoints" as *;
+
+.search {
+	width: 100%;
+	height: 55vh;
+	background-image: url("../../assets/images/background.webp");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media (max-height: 450px) and (orientation: landscape) {
+		height: 65vh;
+	}
+
+	@media (min-height: 745px) {
+		height: 45vh;
+	}
+
+	&__heading {
+		margin-top: 2rem;
+		text-align: center;
+
+		h1 {
+			font-size: 1.625rem;
+			color: rgb(255, 255, 255);
+
+			@include media(">=desktop") {
+				font-size: 2rem;
+			}
+
+			@include media(">=LGdesktop") {
+				font-size: 3rem;
+			}
+		}
+
+		&-client-ip {
+			p {
+				margin: 0 0 0.5rem;
+				color: rgb(225, 225, 225);
+
+				@include media(">=desktop") {
+					font-size: 1.125rem;
+				}
+
+				@include media(">=LGdesktop") {
+					font-size: 1.25rem;
+				}
+			}
+
+			h4 {
+				margin: 0 0 1rem;
+				letter-spacing: 0.25px;
+				color: rgb(225, 225, 225);
+
+				@include media(">=desktop") {
+					font-size: 1.125rem;
+				}
+
+				@include media(">=LGdesktop") {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+
+	&__searchBar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 1rem;
+
+		@media (min-height: 700px) {
+			margin-top: 2rem;
+		}
+
+		@include media(">=LGdesktop") {
+			margin-top: 2.5rem;
+		}
+
+		form {
+			display: flex;
+			justify-content: center;
+			width: 80%;
+			height: 58px;
+
+			@include media(">=LGdesktop") {
+				height: 75px;
+			}
+
+			input {
+				padding: 0 1.5rem;
+				width: min(79%, 360px);
+				height: 100%;
+				font-size: 1.125rem;
+				border: none;
+				border-radius: 15px 0 0 15px;
+
+				@include media(">=LGdesktop") {
+					width: 600px;
+					font-size: 1.5rem;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&::placeholder {
+					font-size: 1rem;
+
+					@include media(">=LGdesktop") {
+						font-size: 1.25rem;
+					}
+				}
+			}
+
+			button {
+				width: min(21%, 94px);
+				height: 100%;
+				padding: 0;
+				background: #000000;
+				border: none;
+				border-radius: 0 15px 15px 0;
+
+				@include media(">=desktop") {
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	&__error {
+		display: none;
+		color: #ffff00;
+		letter-spacing: 0.25px;
+
+		margin-top: -0.1rem;
+
+		&--active {
+			display: block;
+		}
+	}
+}
